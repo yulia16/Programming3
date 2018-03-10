@@ -2,9 +2,9 @@ class Gishatich {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-       this.index = 3;
+        this.index = 3;
         this.multiply = 8;
-    this.energy = 2;
+        this.energy = 2;
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -54,42 +54,42 @@ class Gishatich {
             matrix[vandak[1]][vandak[0]] = 3;
             this.x = vandak[0];
             this.y = vandak[1];
-		this.multiply--;
-			}
+            this.multiply--;
+        }
         else {
             var vandak = random(this.yntrelVandak(1));
             if (vandak) {
                 matrix[this.y][this.x] = 1;
-			var norxot= new Grass(this.y, this.x);
-            grassArr.push(norxot);
+                var norxot = new Grass(this.y, this.x);
+                grassArr.push(norxot);
                 matrix[vandak[1]][vandak[0]] = 3;
                 this.x = vandak[0];
                 this.y = vandak[1];
-					this.multiply--;
+                this.multiply--;
             }
         }
-        
+
     }
     bazmanal() {
         this.multiply++;
-		var norVandak = random(this.yntrelVandak(0));
-        if (this.multiply >= 10 && norVandak && this.energy>=3 ){
-            var norGishatich= new Gishatich(norVandak[0], norVandak[1]);
+        var norVandak = random(this.yntrelVandak(0));
+        if (this.multiply >= 10 && norVandak && this.energy >= 3) {
+            var norGishatich = new Gishatich(norVandak[0], norVandak[1]);
             gishatichArr.push(norGishatich);
             matrix[norVandak[1]][norVandak[0]] = 3;
-                this.multiply =0;
-			this.energy==0;
+            this.multiply = 0;
+            this.energy == 0;
         }
-		else{
-		var norVandak = random(this.yntrelVandak(1));
-		if (this.multiply >= 10 && norVandak && this.energy>=3) {
-            var norGishatich= new Gishatich(norVandak[0], norVandak[1]);
-            gishatichArr.push(norGishatich);
-            matrix[norVandak[1]][norVandak[0]] = 3;
-            this.multiply =0;
-			this.energy==0;
+        else {
+            var norVandak = random(this.yntrelVandak(1));
+            if (this.multiply >= 10 && norVandak && this.energy >= 3) {
+                var norGishatich = new Gishatich(norVandak[0], norVandak[1]);
+                gishatichArr.push(norGishatich);
+                matrix[norVandak[1]][norVandak[0]] = 3;
+                this.multiply = 0;
+                this.energy == 0;
+            }
         }
-		}
     }
 
 
@@ -115,7 +115,7 @@ class Gishatich {
     }
 
     mahanal() {
-        if (this.energy == 0 && this.multiply==0) {
+        if (this.energy == 0 && this.multiply == 0) {
             for (var i in gishatichArr) {
                 if (gishatichArr[i].x == this.x && gishatichArr[i].y == this.y) {
 
